@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 100% 99%; /* slate-50 */
+    --foreground: 240 10% 20%; /* slate-700 */
+    --card: 240 10% 100%; /* white */
+    --card-foreground: 240 10% 20%; /* slate-700 */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 207 90% 54%; /* sky-500 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 207 90% 54%; /* sky-500 */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%; /* slate-200 */
+    --input: 214.3 31.8% 91.4%;
+    --ring: 207 90% 54%; /* sky-500 */
+    --radius: 0.5rem;
+
+    /* Custom theme variables */
+    --aesthetic-blue: #0ea5e9;
+    --light-bg-color: #f8fafc; /* slate-50 */
+    --light-card-color: #ffffff; /* white */
+    --light-text-color: #334155; /* slate-700 */
+    --light-border-color: #e2e8f0; /* slate-200 */
+
+    --dark-bg-color: #020617; /* slate-950 */
+    --dark-card-color: #0f172a; /* slate-900 */
+    --dark-text-color: #cbd5e1; /* slate-300 */
+    --dark-border-color: #1e293b; /* slate-800 */
+  }
+
+  .dark {
+    --background: 240 5% 7%; /* slate-900 as base dark background */
+    --foreground: 210 40% 90%; /* slate-300 */
+    --card: 240 4% 10%; /* slate-800 */
+    --card-foreground: 210 40% 90%; /* slate-300 */
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 207 90% 61%; /* sky-400 */
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 207 90% 61%; /* sky-400 */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 25%; /* slate-800 */
+    --input: 217.2 32.6% 17.5%;
+    --ring: 207 90% 61%; /* sky-400 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text;
+    font-family: "Inter", sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
+  }
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+}
