@@ -1,3 +1,5 @@
+import avatar from "./images/avatar.png";
+
 export const personalInfo = {
   name: "Pranav Patani",
   phone: "+91 9549597444",
@@ -8,7 +10,7 @@ export const personalInfo = {
   shortBio:
     "A passionate Frontend Engineer with a knack for creating dynamic and responsive web applications.",
 
-  profilePictureUrl: "/src/data/images/avatar.png",
+  profilePictureUrl: avatar,
 };
 
 export const education = [
