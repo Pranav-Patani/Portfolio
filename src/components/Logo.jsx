@@ -6,7 +6,7 @@ function Logo() {
   const logoSrc =
     theme === "light" ? `${sprite}#logo-dark` : `${sprite}#logo-light`;
   return (
-    <svg role="img" className="size-10">
+    <svg role="img" className="h-10 w-5">
       <use xlinkHref={logoSrc}></use>
     </svg>
   );

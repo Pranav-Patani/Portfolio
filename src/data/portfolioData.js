@@ -1,4 +1,4 @@
-import avatar from "/assets/avatar.png";
+import avatar from "/assets/avatar.webp";
 
 export const personalInfo = {
   name: "Pranav Patani",
