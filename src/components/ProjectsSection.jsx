@@ -8,7 +8,7 @@ const ProjectCard = ({ project, index }) => {
 
   return (
     <motion.div
-      className="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow-lg border border-light-border-color dark:border-dark-border-color overflow-hidden relative"
+      className="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow-lg overflow-hidden relative"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -16,9 +16,13 @@ const ProjectCard = ({ project, index }) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       whileHover={{
-        y: -2, // Reduced lift
-        boxShadow: "0px 8px 15px rgba(0,0,0,0.08)", // Adjusted shadow
+        y: -2,
+        boxShadow: "0px 8px 15px rgba(0,0,0,0.08)",
         borderColor: "var(--aesthetic-blue)",
+        transition: {
+          duration: 0.4,
+          ease: "easeInOut",
+        },
       }}
     >
       {/* Blurry blue light effect */}
@@ -27,7 +31,7 @@ const ProjectCard = ({ project, index }) => {
         style={{
           background:
             "radial-gradient(circle, var(--aesthetic-blue) 0%, transparent 70%)",
-          filter: "blur(50px)",
+          filter: "blur(100px)",
         }}
         animate={{ opacity: isHovered ? 0.2 : 0 }}
         transition={{ duration: 0.3 }}
@@ -42,17 +46,23 @@ const ProjectCard = ({ project, index }) => {
             {project.date}
           </span>
         </div>
-        <p className="text-sm text-light-text dark:text-dark-text mb-1 italic">
+        <p className="text-sm text-light-text dark:text-dark-text mb-4 italic">
           {project.technologies}
         </p>
-        <p className="text-light-text dark:text-dark-text mb-4 text-sm leading-relaxed">
-          {project.description}
-        </p>
+
+        {project.description.map((cur, id) => (
+          <p
+            className="text-light-text dark:text-dark-text mb-4 text-sm leading-relaxed"
+            key={id}
+          >
+            {cur}
+          </p>
+        ))}
         <div className="flex flex-wrap gap-2 mb-4">
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="text-xs bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-2 py-1 rounded"
+              className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded"
             >
               {tech}
             </span>
@@ -89,7 +99,7 @@ const ProjectsSection = () => {
       id="projects"
       className="section-padding bg-transparent dark:bg-transparent"
     >
-      <div className="container">
+      <div className="container-responsive">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}

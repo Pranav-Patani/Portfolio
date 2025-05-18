@@ -8,7 +8,7 @@ const SkillPill = ({ name, link }) => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-aesthetic-blue/10 dark:bg-aesthetic-blue/20 text-aesthetic-blue dark:text-sky-300 px-4 py-2 rounded-full text-sm font-medium cursor-pointer border border-aesthetic-blue/30"
+      className="bg-aesthetic-blue/10 dark:bg-aesthetic-blue/20 text-aesthetic-blue dark:text-sky-300 px-3 py-1 rounded-md text-sm font-medium cursor-pointer border border-aesthetic-blue/30"
       whileHover={{
         scale: 1.1,
         boxShadow: "0px 0px 15px rgba(14, 165, 233, 0.4)",
@@ -49,7 +49,7 @@ const SkillCategory = ({ title, skills, delay }) => {
       <h3 className="text-2xl font-semibold mb-4 text-light-text dark:text-dark-text">
         {title}
       </h3>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-4">
         {skills.map((skill) => (
           <motion.div key={skill.name} variants={itemVariants}>
             <SkillPill name={skill.name} link={skill.link} />
@@ -66,7 +66,7 @@ const TechSkillsSection = () => {
       id="skills"
       className="section-padding bg-white/10 dark:bg-transparent"
     >
-      <div className="container">
+      <div className="container-responsive">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -4,9 +4,9 @@ function ResumeSection() {
       id="resume"
       className="section-padding bg-transparent dark:bg-transparent text-light-text dark:text-dark-text"
     >
-      <div className="container text-center">
-        <h2 className="text-4xl font-bold mb-14 text-slate-800 dark:text-slate-100">
-          View My Resume
+      <div className="container-responsive text-center">
+        <h2 className="text-4xl font-bold mb-12 text-slate-800 dark:text-slate-100">
+          My Resume
         </h2>
         <a
           href="https://drive.google.com/file/d/1GSdblg7BWDcp6NRKkau1GTjkVXpSiyUS/view?usp=sharing"

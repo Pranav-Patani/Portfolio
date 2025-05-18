@@ -7,7 +7,7 @@ const BlogCard = ({ blog, index }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   return (
     <motion.div
-      className="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow-lg border border-light-border-color dark:border-dark-border-color overflow-hidden relative"
+      className="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow-lg  overflow-hidden relative"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -35,7 +35,7 @@ const BlogCard = ({ blog, index }) => {
           {blog.title}
         </h3>
         <p className="text-light-text dark:text-dark-text mb-4 text-sm leading-relaxed">
-          {blog.description}
+          {blog.description}...
         </p>
         <a
           href={blog.link}
@@ -56,7 +56,7 @@ const BlogsSection = () => {
       id="blogs"
       className="section-padding bg-white/10 dark:bg-transparent"
     >
-      <div className="container">
+      <div className="container-responsive">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}

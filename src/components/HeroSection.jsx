@@ -1,7 +1,7 @@
 import React from "react";
 import { personalInfo } from "../data/portfolioData";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone } from "lucide-react"; // Added FileText for resume
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const HeroSection = () => {
   const nameVariants = {
@@ -28,7 +28,7 @@ const HeroSection = () => {
       id="hero"
       className="min-h-screen flex items-center justify-center section-padding bg-transparent dark:bg-transparent relative overflow-hidden pt-24"
     >
-      <div className="container text-center z-10">
+      <div className="container-responsive text-center z-10">
         {personalInfo.profilePictureUrl && (
           <motion.div
             className="mb-8"
@@ -47,8 +47,8 @@ const HeroSection = () => {
             />
           </motion.div>
         )}
-
-        <h1 className="text-5xl md:text-7xl font-bold mb-4">
+        <p className="mb-0.5 text-md md:text-2xl">Hello! I am</p>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
           {personalInfo.name.split("").map((char, index) => (
             <motion.span
               key={index}
@@ -130,26 +130,44 @@ const HeroSection = () => {
           >
             <Phone size={28} />
           </motion.a>
-          {/* Add a resume download link if Pranav has a PDF resume */}
-          {/* <motion.a variants={socialIconVariants} whileHover="hover" href="/path-to-resume.pdf" target="_blank" rel="noopener noreferrer" className="text-light-text dark:text-dark-text hover:text-aesthetic-blue transition-colors"><FileText size={28} /></motion.a> */}
         </motion.div>
       </div>
-      {/* Optional: animated background shapes */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-32 h-32 bg-sky-300/30 dark:bg-sky-700/30 rounded-full filter blur-xl opacity-70 animate-pulse"
-        animate={{ x: [0, 20, 0], y: [0, -20, 0], scale: [1, 1.1, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-blue-300/30 dark:bg-blue-700/30 rounded-full filter blur-2xl opacity-60 animate-pulse"
-        animate={{ x: [0, -20, 0], y: [0, 20, 0], scale: [1, 0.9, 1] }}
+        className="absolute w-32 h-32 bg-sky-300/30 dark:bg-sky-700/30 rounded-full filter blur-xl opacity-65"
+        animate={{
+          x: [
+            0, 50, 100, 150, 200, 150, 100, 50, 0, -50, -100, -150, -200, -150,
+            -100, -50, 0,
+          ],
+          y: [
+            200, 150, 100, 50, 0, -50, -100, -150, -200, -150, -100, -50, 0, 50,
+            100, 150, 200,
+          ],
+        }}
         transition={{
-          duration: 12,
+          duration: 24,
           repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2,
+          ease: "linear",
         }}
       />
+      <motion.div
+        className="absolute w-40 h-40 bg-blue-300/30 dark:bg-blue-700/30 rounded-full filter blur-2xl opacity-60"
+        animate={{
+          x: [
+            0, -50, -100, -150, -200, -150, -100, -50, 0, 50, 100, 150, 200,
+            150, 100, 50, 0,
+          ],
+          y: [
+            200, 150, 100, 50, 0, -50, -100, -150, -200, -150, -100, -50, 0, 50,
+            100, 150, 200,
+          ],
+        }}
+        transition={{
+          duration: 26,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />{" "}
     </section>
   );
 };

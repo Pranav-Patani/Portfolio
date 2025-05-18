@@ -34,8 +34,11 @@ export const projects = [
   {
     title: "Shelf Share",
     technologies: "Javascript, SASS",
-    description:
-      "Built a responsive book discovery and sharing platform using vanilla JavaScript. Got 200+ users and tracked over 12,000 events using Mixpanel; average user engagement time of 5 minutes+, tracked via google analytics.",
+    description: [
+      `🔍 Search books`,
+      `📖 Share books that inspire you`,
+      `📚 Build and share collections that showcase your unique bookish world`,
+    ],
     techStack: ["Javascript", "SASS", "CSS3", "HTML5", "Parcel", "SVG", "WebP"],
     liveLink: "https://shelfshare.vercel.app",
     githubLink: "https://github.com/Pranav-Patani/Shelf-Share",
@@ -44,8 +47,11 @@ export const projects = [
   {
     title: "Wild Oasis",
     technologies: "ReactJs, Styled Components",
-    description:
-      "Built a staff-only hotel dashboard with email/password authentication, dark mode, and form handling using React Hook Form. Developed booking analytics with Recharts and styled the app using 30+ reusable UI components.",
+    description: [
+      `📊 Dashboard: Gives an overview of the hotel bookings data, showing primary stats with a graphical overview`,
+      `🛡️ Authentication: Gives access only to the hotel staff`,
+      `🛏️ Room management system: Review, add, edit, and delete rooms`,
+    ],
     techStack: [
       "React.Js",
       "React Query",
@@ -60,8 +66,11 @@ export const projects = [
   {
     title: "Beverage Breeze",
     technologies: "React.Js, SASS",
-    description:
-      "Built an e-commerce frontend with Context API and useReducer for global state management. Designed a responsive interface with custom CSS animations and styled components using modular SCSS.",
+    description: [
+      `🔍 Search - Find beverages through the global search bar in the header`,
+      `🛒 Cart and Wishlist - Save items for checkout or save for a later purchase`,
+      `⚙ Filtering – Use various filters for a precise search`,
+    ],
     techStack: ["ReactJs", "SASS"],
     liveLink: "https://beveragebreeze.vercel.app",
     githubLink: "https://github.com/Pranav-Patani/BeverageBreeze",
@@ -101,21 +110,21 @@ export const blogs = [
   {
     title: "Creating A Router In Vanilla Javascript",
     description:
-      "Explores a basic implementation of a vanilla JS router using OOP and addressing a few challenges I faced while learning the implementation.",
+      "Navigation is one of the biggest challenges when dealing with a single-page application. You need to ensure that the user does not notice any difference in the website's behavior compared to that of a multi-page application. Any links that redirect the user within the application must be handled so that they do not cause",
     link: "https://pranavpatani.hashnode.dev/creating-a-router-in-vanilla-javascript",
   },
   {
     title:
       "A Complete Guide to Setting Up Dev Tools for Vanilla JavaScript Projects",
     description:
-      "Explains dev tools set-up in a vanilla JS project targeting tools like eslint, stylelint, husky, lint-staged, prettier, and commitlint.",
+      "Managing and debugging large code bases can be challenging, especially when they lack proper structure or standards. Following a standard for writing code from the beginning, we can avoid spending hours on minor issues and reduce the communication gap among",
     link: "https://pranavpatani.hashnode.dev/a-complete-guide-to-setting-up-dev-tools-for-vanilla-javascript-projects-part-1",
   },
   {
     title:
       "Shelf Share: A Personal Space for Book Lovers to Find and Share Reads",
     description:
-      "Explores a vanilla JS project I built, Shelf Share, highlighting its key features, technologies used, and challenges faced.",
+      "Have you ever had a great collection of books but couldn’t find an easy way to share it with your fellow readers? Did you ever struggle with organizing books or collections of books without creating a mess? If your answer is yes, then",
     link: "https://pranavpatani.hashnode.dev/shelf-share-a-personal-space-for-book-lovers-to-find-and-share-reads",
   },
 ];

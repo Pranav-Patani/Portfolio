@@ -2,9 +2,9 @@ import React, { createContext, useState, useEffect, useContext } from "react";
 
 const ThemeContext = createContext();
 
-export const useTheme = () => useContext(ThemeContext);
+const useTheme = () => useContext(ThemeContext);
 
-export const ThemeProvider = ({ children }) => {
+const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const localTheme = window.localStorage.getItem("theme");
     return localTheme || "dark";
@@ -30,3 +30,5 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
+export { ThemeProvider, useTheme };
