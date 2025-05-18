@@ -89,7 +89,7 @@ const ProjectsSection = () => {
       id="projects"
       className="section-padding bg-transparent dark:bg-transparent"
     >
-      <div className="container-max">
+      <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,7 +1,7 @@
 import React from "react";
 import { personalInfo } from "../data/portfolioData";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, FileText, Phone } from "lucide-react"; // Added FileText for resume
+import { Github, Linkedin, Mail, Phone } from "lucide-react"; // Added FileText for resume
 
 const HeroSection = () => {
   const nameVariants = {
@@ -28,7 +28,7 @@ const HeroSection = () => {
       id="hero"
       className="min-h-screen flex items-center justify-center section-padding bg-transparent dark:bg-transparent relative overflow-hidden pt-24"
     >
-      <div className="container-max text-center z-10">
+      <div className="container text-center z-10">
         {personalInfo.profilePictureUrl && (
           <motion.div
             className="mb-8"

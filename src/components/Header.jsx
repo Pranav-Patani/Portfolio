@@ -18,7 +18,7 @@ const Header = () => {
       }}
       className="fixed top-0 left-0 right-0 z-50 bg-light-bg dark:bg-dark-bg"
     >
-      <div className="container-max section-padding !py-4 flex justify-between items-center">
+      <div className="container section-padding !py-4 flex justify-between items-center">
         <motion.div
           whileHover={{ scale: 1.05 }}
           className="tracking-tight cursor-pointer"

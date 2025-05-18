@@ -6,7 +6,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text py-8 section-padding !pb-8 !pt-12 border-t border-light-border-color dark:border-dark-border-color">
-      <div className="container-max text-center">
+      <div className="container text-center">
         <div className="flex justify-center space-x-6 mb-6">
           <a
             href={personalInfo.github}

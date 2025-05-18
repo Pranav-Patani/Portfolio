@@ -4,7 +4,7 @@ function ResumeSection() {
       id="resume"
       className="section-padding bg-transparent dark:bg-transparent text-light-text dark:text-dark-text"
     >
-      <div className="container-max text-center">
+      <div className="container text-center">
         <h2 className="text-4xl font-bold mb-14 text-slate-800 dark:text-slate-100">
           View My Resume
         </h2>

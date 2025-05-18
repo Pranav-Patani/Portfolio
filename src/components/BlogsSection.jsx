@@ -56,7 +56,7 @@ const BlogsSection = () => {
       id="blogs"
       className="section-padding bg-white/10 dark:bg-transparent"
     >
-      <div className="container-max">
+      <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
