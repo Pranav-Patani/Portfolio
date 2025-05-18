@@ -57,9 +57,7 @@ const Footer = () => {
         <p className="text-sm">
           &copy; {year} {personalInfo.name}. All rights reserved.
         </p>
-        <p className="text-xs mt-2 opacity-70">
-          Built with React, Tailwind CSS, and Framer Motion.
-        </p>
+        <p className="text-xs mt-2 opacity-70">Built with ☕ and 🧠</p>
       </div>
     </footer>
   );
