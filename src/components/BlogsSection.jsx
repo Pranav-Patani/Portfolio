@@ -54,7 +54,7 @@ const BlogsSection = () => {
   return (
     <section
       id="blogs"
-      className="section-padding bg-white/10 dark:bg-white/[.03]"
+      className="section-padding bg-white/10 dark:bg-transparent"
     >
       <div className="container-max">
         <motion.h2
@@ -70,6 +70,17 @@ const BlogsSection = () => {
           {blogs.map((blog, index) => (
             <BlogCard key={blog.title} blog={blog} index={index} />
           ))}
+        </div>
+        <div className="flex justify-center mt-12">
+          <a
+            href="https://pranavpatani.hashnode.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 text-sm font-medium text-white bg-aesthetic-blue rounded-lg shadow-md hover:bg-aesthetic-blue/90 focus:outline-none focus:ring-2 focus:ring-aesthetic-blue focus:ring-offset-2 transition-all"
+            onClick={(e) => e.currentTarget.blur()} // Blur the button on click
+          >
+            View More Blogs
+          </a>
         </div>
       </div>
     </section>

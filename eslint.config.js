@@ -1,7 +1,6 @@
-
 import globals from "globals";
 import pluginJs from "@eslint/js";
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
+import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
@@ -16,15 +15,16 @@ export default [
     },
   },
   pluginJs.configs.recommended,
-  { // React specific configuration
+  {
+    // React specific configuration
     files: ["**/*.jsx", "**/*.js"], // Apply to JS files too if they contain JSX or React logic
     plugins: {
-      "react": pluginReactConfig,
+      react,
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
     },
     rules: {
-      ...pluginReactConfig.rules,
+      ...react.configs.recommended.rules, // Use the recommended rules from eslint-plugin-react
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
@@ -32,13 +32,16 @@ export default [
       ],
       "react/react-in-jsx-scope": "off", // Not needed with new JSX transform
       "react/prop-types": "off", // User wants vanilla JS, no prop-types enforcement for now
-      "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
+      "no-unused-vars": [
+        "warn",
+        { vars: "all", args: "after-used", ignoreRestSiblings: false },
+      ],
     },
     settings: {
       react: {
-        version: "detect"
-      }
-    }
+        version: "detect", // Automatically detect the React version
+      },
+    },
   },
   { ignores: ["dist/", "node_modules/"] },
 ];

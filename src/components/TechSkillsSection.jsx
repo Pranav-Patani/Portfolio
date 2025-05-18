@@ -64,7 +64,7 @@ const TechSkillsSection = () => {
   return (
     <section
       id="skills"
-      className="section-padding bg-white/10 dark:bg-white/[.03]"
+      className="section-padding bg-white/10 dark:bg-transparent"
     >
       <div className="container-max">
         <motion.h2

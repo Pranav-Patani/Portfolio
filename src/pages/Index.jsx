@@ -5,6 +5,7 @@ import TechSkillsSection from "../components/TechSkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
 import BlogsSection from "../components/BlogsSection";
 import Footer from "../components/Footer";
+import ResumeSection from "../components/ResumeSection";
 
 const IndexPage = () => {
   return (
@@ -17,6 +18,7 @@ const IndexPage = () => {
         <TechSkillsSection />
         <ProjectsSection />
         <BlogsSection />
+        <ResumeSection />
       </main>
       <Footer />
     </div>

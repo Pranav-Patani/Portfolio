@@ -37,7 +37,6 @@ const HeroSection = () => {
             transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
             whileHover={{
               scale: 1.05,
-              rotate: [0, 2, -2, 2, -2, 0],
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
           >
