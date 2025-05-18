@@ -1,12 +1,12 @@
-import sprite from "../data/images/sprite.svg";
+import sprite from "../assets/images/sprite.svg";
 import { useTheme } from "../context/ThemeContext";
 
-function Logo({ h = 10, w = 5 }) {
+function Logo() {
   const { theme } = useTheme();
   const logoSrc =
     theme === "light" ? `${sprite}#logo-dark` : `${sprite}#logo-light`;
   return (
-    <svg role="img" className={`h-${h} w-${w}`}>
+    <svg role="img" className="size-10">
       <use xlinkHref={logoSrc}></use>
     </svg>
   );
