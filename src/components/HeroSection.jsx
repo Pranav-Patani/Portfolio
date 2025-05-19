@@ -131,6 +131,25 @@ const HeroSection = () => {
             <Phone size={28} />
           </motion.a>
         </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: personalInfo.name.length * 0.1 + 0.9,
+            duration: 0.5,
+          }}
+          className="mt-14"
+        >
+          <a
+            href="https://drive.google.com/file/d/1GSdblg7BWDcp6NRKkau1GTjkVXpSiyUS/view?usp=sharing"
+            className="px-6 py-3 text-sm font-medium text-white bg-aesthetic-blue rounded-lg shadow-md hover:bg-aesthetic-blue/90 focus:outline-none focus:ring-2 focus:ring-aesthetic-blue focus:ring-offset-2 transition-all"
+            onClick={(e) => e.currentTarget.blur()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View My Resume
+          </a>
+        </motion.div>
       </div>
       <motion.div
         className="absolute w-32 h-32 bg-sky-300/30 dark:bg-sky-700/30 rounded-full filter blur-xl opacity-65"
