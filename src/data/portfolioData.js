@@ -100,6 +100,7 @@ export const techSkills = {
     { name: "React Form", link: "https://react-hook-form.com/" },
     { name: "SASS", link: "https://sass-lang.com/" },
     { name: "Styled Components", link: "https://styled-components.com/" },
+    { name: "Tailwind CSS", link: "https://tailwindcss.com/" },
     { name: "Git", link: "https://git-scm.com/" },
     { name: "Parcel", link: "https://parceljs.org/" },
     { name: "Linux", link: "https://www.linux.org/" },
