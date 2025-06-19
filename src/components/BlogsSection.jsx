@@ -5,9 +5,11 @@ import { ExternalLink } from "lucide-react";
 
 const BlogCard = ({ blog, index }) => {
   const [isHovered, setIsHovered] = React.useState(false);
+  const [imageLoaded, setImageLoaded] = React.useState(false);
+
   return (
     <motion.div
-      className="bg-light-card dark:bg-dark-card p-6 rounded-lg shadow-lg  overflow-hidden relative"
+      className="bg-light-card dark:bg-dark-card rounded-xl shadow-lg overflow-hidden relative group cursor-pointer"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -15,36 +17,94 @@ const BlogCard = ({ blog, index }) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       whileHover={{
-        y: -2,
-        boxShadow: "0px 8px 15px rgba(0,0,0,0.08)",
+        y: -8,
+        boxShadow: "0px 20px 40px rgba(0,0,0,0.12)",
         borderColor: "var(--aesthetic-blue)",
+        transition: {
+          duration: 0.4,
+          ease: "easeInOut",
+        },
       }}
     >
+      {/* Blurry Blue Overlay */}
       <motion.div
-        className="absolute inset-0 opacity-0 pointer-events-none"
+        className="absolute inset-0 opacity-0 pointer-events-none z-10"
         style={{
           background:
             "radial-gradient(circle, var(--aesthetic-blue) 0%, transparent 70%)",
-          filter: "blur(50px)",
+          filter: "blur(100px)",
         }}
         animate={{ opacity: isHovered ? 0.15 : 0 }}
         transition={{ duration: 0.3 }}
       />
-      <div className="relative z-10">
-        <h3 className="text-xl font-semibold mb-2 text-slate-800 dark:text-slate-100">
+
+      {/* Blog Image Banner */}
+      <a
+        href={blog.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative max-h-96 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900">
+          {blog.image && (
+            <>
+              <motion.img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-full object-cover transition-all duration-700"
+                style={{
+                  filter: imageLoaded ? "blur(0px)" : "blur(10px)",
+                  transform: isHovered ? "scale(1.05)" : "scale(1)",
+                }}
+                onLoad={() => setImageLoaded(true)}
+                loading="lazy"
+              />
+
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+                animate={{ opacity: isHovered ? 0.8 : 0.4 }}
+                transition={{ duration: 0.3 }}
+              />
+
+              {!imageLoaded && (
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
+              )}
+            </>
+          )}
+
+          {!blog.image && (
+            <div className="w-full h-full bg-gradient-to-br from-aesthetic-blue/20 to-purple-500/20 flex items-center justify-center">
+              <div className="text-4xl font-bold text-aesthetic-blue opacity-50">
+                {blog.title.charAt(0)}
+              </div>
+            </div>
+          )}
+        </div>
+      </a>
+
+      {/* Blog Content */}
+      <div className="relative z-10 p-6 cursor-default">
+        <motion.h3
+          className="text-2xl font-bold text-slate-800 dark:text-slate-100 group-hover:text-aesthetic-blue transition-colors duration-300 mb-2"
+          animate={{ x: isHovered ? 4 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
           {blog.title}
-        </h3>
+        </motion.h3>
         <p className="text-light-text dark:text-dark-text mb-4 text-sm leading-relaxed">
           {blog.description}...
         </p>
-        <a
+        <motion.a
           href={blog.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-aesthetic-blue hover:underline"
+          className="inline-flex items-center text-aesthetic-blue hover:text-aesthetic-blue/80 font-medium transition-colors"
+          whileHover={{ x: 2 }}
+          transition={{ duration: 0.2 }}
         >
-          Read More <ExternalLink size={16} className="ml-1" />
-        </a>
+          Read More <ExternalLink size={14} className="ml-1" />
+        </motion.a>
       </div>
     </motion.div>
   );
