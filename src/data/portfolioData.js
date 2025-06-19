@@ -1,4 +1,11 @@
 import avatar from "/assets/avatar.webp";
+import shelfshare from "/assets/shelfshare.webp";
+import wildoasisLight from "/assets/wildoasis-light.webp";
+import wildoasisDark from "/assets/wildoasis-dark.webp";
+import beveragebreeze from "/assets/beveragebreeze.webp";
+import routerBlog from "/assets/router-blog.webp";
+import devToolsBlog from "/assets/dev-tools-blog.webp";
+import shelfshareBlog from "/assets/shelfshare-blog.webp";
 
 export const personalInfo = {
   name: "Pranav Patani",
@@ -43,6 +50,7 @@ export const projects = [
     liveLink: "https://shelfshare.vercel.app",
     githubLink: "https://github.com/Pranav-Patani/Shelf-Share",
     date: "July 2024",
+    image: shelfshare,
   },
   {
     title: "Wild Oasis",
@@ -62,6 +70,8 @@ export const projects = [
     liveLink: "https://oasiscabins.vercel.app",
     githubLink: "https://github.com/Pranav-Patani/wildoasis",
     date: "March 2025",
+    imageLight: wildoasisLight,
+    imageDark: wildoasisDark,
   },
   {
     title: "Beverage Breeze",
@@ -75,6 +85,7 @@ export const projects = [
     liveLink: "https://beveragebreeze.vercel.app",
     githubLink: "https://github.com/Pranav-Patani/BeverageBreeze",
     date: "July 2023",
+    image: beveragebreeze,
   },
 ];
 
@@ -113,6 +124,7 @@ export const blogs = [
     description:
       "Navigation is one of the biggest challenges when dealing with a single-page application. You need to ensure that the user does not notice any difference in the website's behavior compared to that of a multi-page application. Any links that redirect the user within the application must be handled so that they do not cause",
     link: "https://pranavpatani.hashnode.dev/creating-a-router-in-vanilla-javascript",
+    image: routerBlog,
   },
   {
     title:
@@ -120,6 +132,7 @@ export const blogs = [
     description:
       "Managing and debugging large code bases can be challenging, especially when they lack proper structure or standards. Following a standard for writing code from the beginning, we can avoid spending hours on minor issues and reduce the communication gap among",
     link: "https://pranavpatani.hashnode.dev/a-complete-guide-to-setting-up-dev-tools-for-vanilla-javascript-projects-part-1",
+    image: devToolsBlog,
   },
   {
     title:
@@ -127,5 +140,6 @@ export const blogs = [
     description:
       "Have you ever had a great collection of books but couldn’t find an easy way to share it with your fellow readers? Did you ever struggle with organizing books or collections of books without creating a mess? If your answer is yes, then",
     link: "https://pranavpatani.hashnode.dev/shelf-share-a-personal-space-for-book-lovers-to-find-and-share-reads",
+    image: shelfshareBlog,
   },
 ];
